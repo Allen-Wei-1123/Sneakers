@@ -14,22 +14,7 @@ class Details extends Component{
                         <div class = "big-image">
                                 <img src = {process.env.PUBLIC_URL+ "/images/offaj.jpg"}></img>
                         </div>
-                        <div class = "small-image">
-                                <ul>
-                                    <li>
-                                        <img src = {process.env.PUBLIC_URL + "/images/offblue.png"}></img>
-                                    </li>
-                                    <li>
-                                        <img src = {process.env.PUBLIC_URL + "/images/offblue.png"}></img>
-                                    </li>
-                                    <li>
-                                        <img src = {process.env.PUBLIC_URL + "/images/offblue.png"}></img>
-                                    </li>
-                                    <li>
-                                        <img src = {process.env.PUBLIC_URL + "/images/offblue.png"}></img>
-                                    </li>
-                                </ul>
-                        </div>
+                        
                     </div>
                     <div class = "shoes-infos">
                         <div class = "brand">
@@ -68,10 +53,70 @@ Off-White™ x Air Jordan 1「UNC」以經典 Air Jordan 1「UNC」藍白配色�
 
                         <div class = "shoes-sizes">
                             <div class = "sizes-chart">
+                                <ul>
+                                    <li>
+                                        <a>
+                                            <div class = "size">
+                                                    7.5
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a>
+                                            <div class = "size">
+                                                    8.5
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a>
+                                            <div class = "size">
+                                                    9.5
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a>
+                                            <div class = "size">
+                                                    10.5
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a>
+                                            <div class = "size">
+                                                11.5
+                                            </div>
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a>
+                                            <div class = "size">
+                                                12
+                                            </div>
+                                        </a>
+                                    </li>
+                                   
+                                </ul>
+                            </div>
+
+                            <div class = "buy-btn-div">
                                 
+                                <a>
+                                    <div class = "buy-now-btn">
+                                            Add to Cart
+                                    </div>
+                                </a>
+
                             </div>
                             
                         </div>
+
                         
 
                     </div>

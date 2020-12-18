@@ -49,7 +49,7 @@
 /* shoes infos start */
 .shoes-infos{
     float: left;
-    background-color: purple;
+    /* background-color: purple; */
     height: 100%;
     width:455px;
 }
@@ -112,25 +112,61 @@
 .shoes-sizes{
     width: 100%;
     height: 320px;
-    background-color: green;
+    /* background-color: green; */
 }
 
 .sizes-chart{
     width: 100%;
-    height: 200px;
-    background-color: red;
+    overflow: auto;
+    /* background-color: red; */
+    
 }
 
 
 .sizes-chart ul li {
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
+.sizes-chart ul li div{
+    height: 43px;
+    width: 78px;
+    /* background-color: green; */
+    line-height: 43px;
+    text-align: center;
+    border: 1px solid lightgray;
 
+}
+
+.sizes-chart ul li div:hover{
+    background-color: black;
+    color: white;
+}
 .buy-btn-div{
     width: 100%;
     height: 120px;
-    background-color: yellow;
+    /* background-color: yellow; */
+    margin-top: 30px;
+    line-height: 120px;
 }
+
+.buy-btn-div a {
+    background-color: purple;
+    width: 222px;
+    height: 70px;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.buy-now-btn{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+}
+
 /* shoes infos end */
