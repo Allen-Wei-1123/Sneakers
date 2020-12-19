@@ -21,24 +21,81 @@
     color: white;
     font-family: 'Balsamiq Sans', cursive;
 }
-.top ul{
+#top-id{
     float :right;
     margin-right: 10px;
 }
-.top ul li {
+#top-li{
     display: inline-block;
     line-height: 100px;
     margin-left: 20px;
-    
+    /* background-color: red; */
 }
 
-.top ul li a {
+.title {
     text-transform: uppercase;
     font-family: 'Teko', sans-serif;
     font-size: 25px;
     font-weight: 500;
     color :white;
+    text-decoration: none;
+
 }
+
+.title:hover{
+    color:white
+}
+
+
+.cate-ul{
+    background-color: white;
+    opacity: 0.7;
+    left : 0 ;
+    width: 100%;
+    position: absolute;
+    z-index: 100;
+    /* display: table; */
+    text-align: center;
+    display: none;
+}
+
+
+.cate-li{
+    display: inline-block;
+    /* background-color: green; */
+    height: 300px;
+    width: 150px;
+
+}
+
+.aj1-5{
+    display: block;
+
+}
+.aj1-5 li{
+    height: 50px;
+    font-weight: bold;
+}
+
+.aj1-5 li a {
+    font-size: 10px;
+    height: 100%;
+    width: 100%;
+    display: block;
+    /* display: none; */
+    font-size: 15px;
+    text-decoration: none;
+}
+
+
+
+ #top-li:hover .cate-ul{
+    display: table;
+}
+
+
+
+
 /* banner start */
 .banner{
     
@@ -169,6 +226,7 @@
 
 
 .contact,.contact1{
+    /* background-color: green; */
     width: 180px;
     height: 180px;
     float: right;

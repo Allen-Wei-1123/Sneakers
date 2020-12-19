@@ -2,6 +2,7 @@ import React , {Component,Fragment} from 'react';
 import Top from '../Top'
 import ShortCut from './ShortCut'
 import Bot from '../Bottom'
+import Recom from './Recommendation'
 import '../css/Details.css'
 class Details extends Component{
     render(){
@@ -17,7 +18,7 @@ class Details extends Component{
                         
                     </div>
                     <div class = "shoes-infos">
-                        <div class = "brand">
+                        <div class = "details-brand">
                             air jordan
                         </div>
 
@@ -122,6 +123,7 @@ Off-White™ x Air Jordan 1「UNC」以經典 Air Jordan 1「UNC」藍白配色�
                     </div>
                     
                 </div>
+                <Recom/>
                 <Bot/>
             </Fragment>
         )

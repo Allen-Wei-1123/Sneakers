@@ -7,7 +7,7 @@ class RadioBtns extends Component{
                         <div class = "form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
                                         <label class="form-check-label" for="defaultCheck1">
-                                            Male
+                                            {this.props.sizes}
                                         </label>
                                         
                             </div>

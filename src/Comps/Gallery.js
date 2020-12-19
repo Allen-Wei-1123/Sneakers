@@ -5,7 +5,7 @@ import Bot from '../Bottom'
 import '../css/Gallery.css'
 import $ from 'jquery'
 import Card from '../Card'
-
+import Recom from './Recommendation'
 import RadioBtns from './RadioBtns'
 class Gallery extends Component{
 
@@ -76,15 +76,18 @@ class Gallery extends Component{
                         <div class="collapse multi-collapse" id="multiCollapseExample2">
                             <div class = "content1">
                                 
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    <RadioBtns></RadioBtns>
-                                    
+                                    <RadioBtns sizes = {"3"}></RadioBtns>
+                                    <RadioBtns sizes = {"3.5"}></RadioBtns>
+                                    <RadioBtns sizes = {"4"}></RadioBtns>
+                                    <RadioBtns sizes = {"4.5"}></RadioBtns>
+                                    <RadioBtns sizes = {"5"}></RadioBtns>
+                                    <RadioBtns sizes = {"5.5"}></RadioBtns>
+                                    <RadioBtns sizes = {"6"}></RadioBtns>
+                                    <RadioBtns sizes = {"7"}></RadioBtns>
+                                    <RadioBtns sizes = {"7.5"}></RadioBtns>
+                                    <RadioBtns sizes = {"8"}></RadioBtns>
+                                    <RadioBtns sizes = {"8.5"}></RadioBtns>
+                                    <RadioBtns sizes = {"9"}></RadioBtns>
                             </div>
                         </div>
                     <div>
@@ -123,6 +126,7 @@ class Gallery extends Component{
                         </div>
                     </div>
                 </div>
+                
                  <Bot/>
             </Fragment>
         )

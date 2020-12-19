@@ -36,7 +36,7 @@ class FrontPage extends React.Component{
                         
                     </div>
                     
-
+                    
                     <div id="accordion">
                          <p>
                         
