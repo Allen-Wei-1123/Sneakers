@@ -31,7 +31,7 @@ class CartItems extends Component{
             <Fragment>
                     <tr>
                         <td>
-                            <img src = {process.env.PUBLIC_URL + "/images/offaj.jpg"}></img>
+                            <img src = {process.env.PUBLIC_URL + "/images/off_navy.jpg"}></img>
                         </td>
                         <td id = "cart-item-name">
                             AIR JORDAN 1 RETRO HIGH OFF-WHITE Chicago
@@ -43,8 +43,8 @@ class CartItems extends Component{
                             
                             <div class = "adjust-amount" >
                               
-                               
-                            <input type="number" id="quantity"  name="quantity" min="1" max="5" onChange = {this.AmountChanged}/>
+
+                                <input defaultValue="1" type="number" id="quantity"  name="quantity" min="1" max="5" onChange = {this.AmountChanged}/>
                                 
                             </div>
 

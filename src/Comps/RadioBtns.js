@@ -5,8 +5,8 @@ class RadioBtns extends Component{
         return(
                 <Fragment>
                         <div class = "form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                                        <label class="form-check-label" for="defaultCheck1">
+                                        <input class="form-check-input" type="checkbox" value="" id="defaultCheck3"/>
+                                        <label class="form-check-label" >
                                             {this.props.sizes}
                                         </label>
                                         

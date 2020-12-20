@@ -43,6 +43,7 @@ class Gallery extends Component{
                         <a id = "stitle" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">
                             <div class = "category-gender">
                                 Gender
+                                
                             </div>
                         </a>
 
@@ -56,8 +57,8 @@ class Gallery extends Component{
                                     
                                 </div>
                                 <div class = "form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck1"/>
-                                    <label class="form-check-label" for="defaultCheck1">
+                                    <input class="form-check-input" type="checkbox" value="" id="defaultCheck2"/>
+                                    <label class="form-check-label" for="defaultCheck2">
                                         Female
                                     </label>
                                     
@@ -70,8 +71,6 @@ class Gallery extends Component{
                                 Sizes
                             </div>
                         </a>
-
-
 
                         <div class="collapse multi-collapse" id="multiCollapseExample2">
                             <div class = "content1">
