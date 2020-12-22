@@ -2,6 +2,24 @@ import React , {Component,Fragment} from 'react';
 import '../css/Recom.css'
 import Card from '../Card'
 class Recommendations extends Component{
+
+    constructor(props){
+        super(props)
+    }
+    state = {
+        dataset:[]
+    }
+    componentDidMount(){
+        fetch('http://localhost:8085/data')
+        .then((res)=>res.json())
+        .then((data)=>{
+
+            this.setState({
+                dataset: data
+            })
+
+        })
+    }
     render(){
         return(
                 <Fragment>
@@ -11,18 +29,16 @@ class Recommendations extends Component{
                         </div>
                         <div class = "recom-cards">
                             <ul>
-                                <li>
-                                    <Card img = {"offvape.jpg"} name = {"OffWhite x Vapormax"}/>
-                                </li>
-                                <li>
-                                    <Card img = {"offvape.jpg"} name = {"OffWhite x Vapormax"}/>
-                                </li>
-                                <li>
-                                    <Card img = {"offvape.jpg"} name = {"OffWhite x Vapormax"}/>
-                                </li>
-                                <li>
-                                    <Card img = {"offvape.jpg"} name = {"OffWhite x Vapormax"}/>
-                                </li>
+                               
+                                {
+
+                                    this.state.dataset.filter((item)=>item["recommended"] == "true").map((item1)=>(
+                                        <li>
+                                            <Card img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}  url = {"/shoes/" + item1["id"]} ></Card>
+                                        </li>
+                                    ))
+
+                                }
                             </ul>
                         </div>
                     </div>

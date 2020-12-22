@@ -23,7 +23,7 @@ class Card extends Component{
                             </div>
 
                             <div class = "shoes-name">
-                               <a id = "a" href = "/shoes/1">
+                               <a id = "a" href = {this.props.url}>
 
                                     {this.props.name}
                                     

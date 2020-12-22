@@ -48,7 +48,7 @@ class FrontPage extends React.Component{
                          
                         {
                             this.state.dataset.filter(item => item["recommended"] == "true").map((item1)=>(
-                                <Card img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}></Card>
+                                <Card img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}  url = {"/shoes/" + item1["id"]} ></Card>
                             ))
                         }
       

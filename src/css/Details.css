@@ -92,11 +92,12 @@
 
 .shoes-description{
     width: 100%;
-    height: 200px;
+    /* height: 200px; */
     /* background-color: red; */
     margin-top: 20px;
     font-size: 18px;
     font-weight: 500;
+    overflow: auto;
 }
 
 .price-div{

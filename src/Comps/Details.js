@@ -16,7 +16,8 @@ class Details extends Component{
         description:"",
         price : "",
         sizes:{},
-        brand:""
+        brand:"",
+        shoesid: ""
     }
     componentDidMount(){
         var url = window.location.href;
@@ -49,9 +50,41 @@ class Details extends Component{
     handleShoes = (e) =>{
 
         var id = e.currentTarget.id
-        
-        $('#'+id).css('background-color','yellow');
+        var fakeid = id;
+        if(id[id.length-1] == 'h'){
+            var i = 0 ;
+            var str = ""
+            while( id[i] != 'h'){
+                str += id[i];
+                i+=1;
+            }
+            str += '.5';
+            fakeid = str; 
+        }
 
+
+        $('#'+id).css('background-color','black');
+        $('#'+id).css('color','white')
+        var tmp  = this.state.shoesid
+        var thesize = this.state.sizes;
+        if(tmp != id){
+
+        
+            if(tmp != "" ){
+                $(tmp).css('background-color','white');
+                $(tmp).css('color','black')
+                this.setState({
+                    shoesid:'#'+id,
+                    price : thesize[fakeid]
+                })
+            }else{
+                this.setState({
+                    shoesid:'#'+id,
+                    price : thesize[fakeid]
+                })
+            }
+
+        }
     }
 
     render(){
@@ -96,7 +129,7 @@ class Details extends Component{
                         </div>
 
                         <div class = "price-div">
-                             CAD $150000
+                             CAD {this.state.price}
                         </div>
 
                         <div class = "shoes-sizes">
