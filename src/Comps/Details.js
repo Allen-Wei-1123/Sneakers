@@ -4,7 +4,56 @@ import ShortCut from './ShortCut'
 import Bot from '../Bottom'
 import Recom from './Recommendation'
 import '../css/Details.css'
+import $ from 'jquery'
 class Details extends Component{
+    constructor(props){
+        super(props)
+    }
+    state = {
+        dataset : [],
+        image:"",
+        name : "",
+        description:"",
+        price : "",
+        sizes:{},
+        brand:""
+    }
+    componentDidMount(){
+        var url = window.location.href;
+        console.log(url)
+
+        var fields = url.split('/');
+        var id = fields.pop();
+
+        
+
+        fetch("http://localhost:8085/shoes/"+id)
+        .then((response)=>response.json())
+        .then((data)=>{
+            this.setState({
+                dataset : data[0],
+                image: data[0]["image"],
+                name: data[0]["name"],
+                description: data[0]["description"],
+                price : data[0]["price"],
+                sizes : data[0]["sizes"],
+                brand: data[0]["brand"]
+            })
+        });
+        this.handleShoes = this.handleShoes.bind(this)
+        
+
+
+    }
+
+    handleShoes = (e) =>{
+
+        var id = e.currentTarget.id
+        
+        $('#'+id).css('background-color','yellow');
+
+    }
+
     render(){
         return(
             <Fragment>
@@ -13,17 +62,17 @@ class Details extends Component{
                 <div class = "shoes-father">
                     <div class = "images">
                         <div class = "big-image">
-                                <img src = {process.env.PUBLIC_URL+ "/images/offaj.jpg"}></img>
+                                <img src = {process.env.PUBLIC_URL+ "/images/" + this.state.image}></img>
                         </div>
                         
                     </div>
                     <div class = "shoes-infos">
                         <div class = "details-brand">
-                            air jordan
+                            {this.state.brand}
                         </div>
 
                         <div class = "shoes-infos-name">
-                                AIR JORDAN 1 RETRO HIGH OFF-WHITE Chicago
+                                {this.state.name}
                         </div>
 
                         <div class = "social-medias">
@@ -43,9 +92,7 @@ class Details extends Component{
                         </div>
 
                         <div class = "shoes-description">
-                        由 Virgil Abloh 帶來的全新 Air Jordan 1 Retro High Off-White™「UNC」配色，突擊登陸美國 Nike SNKRS App，一如所料隨即被狂掃一空。<br/><br/>
-
-Off-White™ x Air Jordan 1「UNC」以經典 Air Jordan 1「UNC」藍白配色為變奏，並再搭以 Virgil Abloh 的改造設計手法，添上如紅色 “Zip-Tie”、「Off-White™ for NIKE」字樣及 “AIR” 等豐富細節。
+                            {this.state.description}
                         </div>
 
                         <div class = "price-div">
@@ -55,53 +102,35 @@ Off-White™ x Air Jordan 1「UNC」以經典 Air Jordan 1「UNC」藍白配色�
                         <div class = "shoes-sizes">
                             <div class = "sizes-chart">
                                 <ul>
-                                    <li>
-                                        <a>
-                                            <div class = "size">
-                                                    7.5
-                                            </div>
-                                        </a>
-                                    </li>
+                        
+                                    {
+                                            Object.keys(this.state.sizes).map((key,i)=>{
+                                                var tmp  = key;
+                                                
+                                                if(key.includes('.')){
+                                                    var i = 0 ;
+                                                    var num = ""
+                                                    while(key[i] != '.'){
+                                                        num += key[i];
+                                                        i++;
+                                                    }
+                                                    tmp = num + "h"
+                                                }
+                                                return(
+                                                    <li>
+                                                        <a id = "tmp">
+                                                            <div class = "size" id= {tmp}  onClick = {this.handleShoes}>
+                                                                    {
 
-                                    <li>
-                                        <a>
-                                            <div class = "size">
-                                                    8.5
-                                            </div>
-                                        </a>
-                                    </li>
+                                                                        key
+                                                                    }
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                )
+                                            })
 
-                                    <li>
-                                        <a>
-                                            <div class = "size">
-                                                    9.5
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a>
-                                            <div class = "size">
-                                                    10.5
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a>
-                                            <div class = "size">
-                                                11.5
-                                            </div>
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a>
-                                            <div class = "size">
-                                                12
-                                            </div>
-                                        </a>
-                                    </li>
+                                    }
                                    
                                 </ul>
                             </div>

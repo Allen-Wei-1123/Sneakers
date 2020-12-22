@@ -95,6 +95,8 @@
     height: 200px;
     /* background-color: red; */
     margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .price-div{

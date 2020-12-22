@@ -12,6 +12,8 @@
    },
    "recommended":"true"
    ,
+    "brand":"Jordan"
+   ,
    "description": "The Off-White x Air Jordan 1 Retro High OG was one of the most highly anticipated footwear collaborations of 2017. It marked the first time Virgil Abloh, founder of the Milan-based fashion label and Jordan Brand had teamed up. Nicknamed \"The 10\" edition, this pair comes in the original Chicago-themed white, black and varsity red colorway. Featuring a white, red and black-based deconstructed leather upper with a Swooshless medial side branded with \"Off-White for Nike Air Jordan 1, Beaverton, Oregon, USA © 1985.\""
  },
  {
@@ -23,10 +25,14 @@
       "9.5":"$1000",
       "10":"$1200",
       "10.5":"$1300",
-      "11":"$1400"
+      "11":"$1400",
+      "12":"$1500"
   }
   ,
   "recommended":"true"
+   ,
+   "brand":"Nike"
+
    ,
    "description": "The clean white Off-White Nike Air VaporMaxs are pure, deconstructed “hype.” Coming after the second black version of the Off-White VaporMax, these feature cutting-edge technology with its Flyknit upper, dynamic Flywire lacing system, and state-of-the-art Air VaporMax unit, providing insane comfort while also stuntin on every other shoe on the street. These dropped in April of 2018 and are a must Bid for any Virgil Abloh fan."
  },
@@ -44,6 +50,8 @@
   ,
   "recommended":"true"
    ,
+   "brand":"Nike"
+   ,
    "description": "Virgil is back at it again with the Converse Chuck Taylor All-Star 70s Hi Off-White. These legendary sneakers come with an all-white upper, stripped midsole, and orange sole. The Off-White Chucks released in October 2018 and retailed for $130. Add some versatile heat to your sneaker collection and buy these on StockX."
  },
  {
@@ -59,6 +67,8 @@
   }
   ,
   "recommended":"false"
+   ,
+   "brand":"Nike"
    ,
    "description": "The force is within you, as Nike uses their very own and release the Air Force 1 Low Off-White Black White. This AF1 comes with a black upper, white Nike “Swoosh”, black midsole, and a black sole. These sneakers were released December 2018 and retailed for $170. Thrive with the force and place a Bid on StockX today."
  },
@@ -76,6 +86,9 @@
   ,
   "recommended":"false"
    ,
+   "brand":"Nike"
+
+   ,
    "description": "It’s officially 2019 and Virgil is back applying pressure on the sneaker world with the release of the Air Max 90 Off-White Black. This AM 90 is sporting a black upper, white Nike “Swoosh”, black midsole, and a black sole. These sneakers released in January 2019 and retailed for $160. The Virgil x Nike World Tour continues, so don’t miss out and place a Bid on StockX today."
  },
  {
@@ -91,6 +104,8 @@
   }
   ,
   "recommended":"false"
+   ,
+   "brand":"Nike"
    ,
    "description": ""
  },
@@ -108,6 +123,8 @@
   ,
   "recommended":"false"
    ,
+   "brand":"Nike"
+   ,
    "description": "After the release of his critically-acclaimed \"The Ten\" project with Nike, Virgil Abloh is back again with another iteration of the Nike Air Presto Off-White. Continuing with the deconstructed and industrial vibe, this pair features a monochromatic white colorway. In addition, there is a grey Nike Swoosh (with orange detailing) stitched onto the side panel, \"AIR\" written on the lateral side of the heel in black, and a white Nike tag on the tongue. Sure to be one of the hottest shoes of 2018, this pair dropped in June 2018 for a retail price of $160."
  },
  {
@@ -123,6 +140,8 @@
   }
   ,
   "recommended":"false"
+   ,
+   "brand":"Nike"
    ,
    "description": "Virgil Abloh added a second Jordan silhouette to his series of Nike collaborations with the Jordan 5 Retro High Off-White Black, now available on StockX. This release pays homage to the first Jordan that Virgil ever owned, the Air Jordan 5 Black Metallic. In signature fashion, Virgil has reimagined this classic silhouette in a way that embraces the importance of Nike Air technology."
  },
@@ -140,6 +159,8 @@
   ,
   "recommended":"false"
    ,
+   "brand":"Nike"
+   ,
    "description": "Virgil Abloh pays homage to skate culture’s adoption of 1980’s Nike Basketball silhouettes with the Nike Dunk Low Off-White Michigan, now available on StockX. When Nike unveiled the Dunk as the centerpiece of their Nike College Color’s program in 1985, seven different colleges were represented in the first colorways offered, with Michigan was one of the first schools."
  },
  {
@@ -155,6 +176,8 @@
   }
   ,
   "recommended":"false"
+   ,
+   "brand":"Nike"
    ,
    "description": "Virgil looks to continue his 2018 Off-White and Nike collab tour with the Nike Zoom Fly Off-White Pink. This sneaker comes with a translucent upper featuring pink accents, a pink Nike “Swoosh”, pink midsole, and a pink sole. The electrifying shoe released in October 2018 and retailed for $170. This Zoom Fly is expecting to resale for big numbers, so place a Bid now on StockX."
  }

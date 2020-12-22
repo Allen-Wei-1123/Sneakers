@@ -10,11 +10,28 @@ class FrontPage extends React.Component{
     constructor(props){
         super(props)
     }
-    componentDidMount =()=>{
+    state = {
+        dataset: []
+    }
+    
+    componentDidMount(){
         $('#morebtn').on('click',function(){
             $('#morebtn').css("display","none");
         })
+        
+        fetch("http://127.0.0.1:8085/data")
+        .then((response)=>response.json())
+        .then((data)=>{
+            this.setState({
+                dataset : data
+            })
+        });
+
+       
     }
+
+
+    
 
 
     render(){
@@ -28,12 +45,13 @@ class FrontPage extends React.Component{
                     </div>
                     <div class= "box-father">
 
-                        <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"}/>
-                        <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"}/>
-                        <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"}/>
-                        <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"}/>
-
-                        
+                         
+                        {
+                            this.state.dataset.filter(item => item["recommended"] == "true").map((item1)=>(
+                                <Card img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}></Card>
+                            ))
+                        }
+      
                     </div>
                     
                     

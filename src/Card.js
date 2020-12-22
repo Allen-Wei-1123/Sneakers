@@ -1,7 +1,17 @@
 import React , {Component,Fragment} from 'react';
-
+import $ from 'jquery'
 
 class Card extends Component{
+
+    
+    constructor(props){
+        super(props)
+    }
+
+    componentDidMount(){
+        // $("#a").attr("href","/shoes/"+this.props.id);
+    }
+
     render(){
         return(
             <div class = "box-son">
@@ -13,9 +23,10 @@ class Card extends Component{
                             </div>
 
                             <div class = "shoes-name">
-                               <a>
+                               <a id = "a" href = "/shoes/1">
 
-                               {this.props.name}
+                                    {this.props.name}
+                                    
                                </a>
                                
                                 
@@ -23,7 +34,7 @@ class Card extends Component{
 
 
                             <div class = "price">
-                                CAD $1000
+                               CAD {this.props.price}
                             </div>
 
             </div>
