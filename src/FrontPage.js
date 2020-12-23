@@ -35,6 +35,7 @@ class FrontPage extends React.Component{
 
 
     render(){
+        var values = [1,2,3,4] , values2  = [5,6,7,8];
         return(
             <Fragment>
                 <Top/>
@@ -47,7 +48,7 @@ class FrontPage extends React.Component{
 
                          
                         {
-                            this.state.dataset.filter(item => item["recommended"] == "true").map((item1)=>(
+                            this.state.dataset.filter(item => values.includes(item["id"])).map((item1)=>(
                                 <Card img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}  url = {"/shoes/" + item1["id"]} ></Card>
                             ))
                         }
@@ -65,10 +66,12 @@ class FrontPage extends React.Component{
                         <div class="collapse" id="collapseExample">
                             <div class= "box-father">
 
-                                <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"} price = "1000"/>
-                                <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"} price = "1000"/>
-                                <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"} price = "1000"/>
-                                <Card img = {'offvape.jpg'} name = {"OffWhite x Vapormax"}/>
+                            {
+                            this.state.dataset.filter(item => values2.includes(item["id"])).map((item1)=>(
+                                <Card img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}  url = {"/shoes/" + item1["id"]} ></Card>
+                            ))
+                        }
+      
 
 
 

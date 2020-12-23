@@ -16,7 +16,9 @@ class Top extends Component{
             <Fragment>
                 <div class= "top">
                         <div class = "logo" >
-                            Sneakers
+                            <a href = "/">
+                                Sneakers
+                            </a>
                         </div>
                         <ul id = "top-id">
                             <li id = "top-li">
@@ -57,7 +59,7 @@ class Top extends Component{
                             <li id = "top-li"><a class = "title" href = "#">Streetwear</a></li>
                             <li id = "top-li"><a class = "title" href = "#">New Arrivals</a></li>
                             <li id = "top-li"><a class = "title" href = "#">Supreme</a></li>
-                            <li id = "top-li"><a class = "title" href = "#">Log In</a></li>
+                            <li id = "top-li"><a class = "title" href = "/login">Log In</a></li>
                         </ul>
 
                         
