@@ -27,10 +27,24 @@ class ShoppingCart extends Component{
         shoesinfos:[]
     }
 
+
+    deleteTblCell(value){
+        var tmp = [...this.state.shoesinfos];
+        var filteredtmp  = tmp.filter((item)=>item[0][1] != value)
+        console.log(filteredtmp)
+        
+        this.setState({
+            shoesinfos:filteredtmp
+        })
+        
+    }
+
     componentDidMount(){
         this.setState({
             DeleteFunc : DeleteRow
         })
+
+        this.deleteTblCell = this.deleteTblCell.bind(this)
 
         var url = "http://localhost:8085/users/1"
         var obj;
@@ -52,11 +66,11 @@ class ShoppingCart extends Component{
                 .then((data)=>{
                     var img = data[0]["image"]
                     var name = data[0]["name"]
-                    console.log("size is ",i)
+                    var itemid = data[0]["id"]
                     var price = data[0]["sizes"][this.state.sizes[i]]
                     var size = this.state.sizes[i];
-                    console.log(price," ",size)
-                    var arr = [img,name,price,size]
+                    
+                    var arr = [img,name,price,size,itemid]
                     
                     var joined = [arr]                    
                     this.setState({
@@ -96,8 +110,8 @@ class ShoppingCart extends Component{
                         <tbody>
                             {
                                 this.state.shoesinfos.map((item)=>{
-                                    return <CartItems img = {item[0][0]  } name = {item[0][1]} price = {item[0][2]} 
-                                        size = {item[0][3]}
+                                    return <CartItems key = {item[0][4]} img = {item[0][0]  } name = {item[0][1]} price = {item[0][2]} 
+                                        size = {item[0][3]} deleteCell = {this.deleteTblCell}
                                     ></CartItems>
                                 })
                             }

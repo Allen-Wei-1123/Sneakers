@@ -5,27 +5,32 @@ import '../css/ShoppingCart.css'
 
 class CartItems extends Component{
     deleteclicked = e =>{
-        $(e).parents('tr').remove();
+        this.props.deleteCell(this.props.name);
     }
 
     AmountChanged = e =>{
        
         this.setState({
-            price : "$" + ( this.state.singlePrice * e.target.value).toString()
+            price : "$" + ( this.state.singlePrice * e.target.value).toString(),
+            amount : e.target.value
         })
 
-    }
-
-    constructor(props){
-        super(props)
     }
     state = {
-        singlePrice:""
+        singlePrice:"",
+        price:"",
+        amount : 1
     }
+    constructor(props){
+        super(props)
+        this.props = props
+        console.log(props)
+        
+    }
+
+    
     componentDidMount(){
-        this.setState({
-            price : 1
-        })
+        
         var pricestr = ""
         var tmp = this.props.price;
         for(var i = 1 ;i<tmp.length;i++){
@@ -35,6 +40,7 @@ class CartItems extends Component{
             singlePrice : parseInt(pricestr),
             price : this.props.price
         })
+        this.deleteclicked = this.deleteclicked.bind(this)
     }
 
     render(){
@@ -53,7 +59,7 @@ class CartItems extends Component{
                             {this.props.size}
                         </td>
                         <td id = "price-td">
-                            {this.state.price }
+                            {this.state.price  }
                         </td>
                         <td>
                             
