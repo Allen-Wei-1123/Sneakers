@@ -9,18 +9,31 @@ class CartItems extends Component{
     }
 
     AmountChanged = e =>{
+       
         this.setState({
-            price : 3
+            price : "$" + ( this.state.singlePrice * e.target.value).toString()
         })
+
     }
 
     constructor(props){
         super(props)
     }
-
+    state = {
+        singlePrice:""
+    }
     componentDidMount(){
         this.setState({
             price : 1
+        })
+        var pricestr = ""
+        var tmp = this.props.price;
+        for(var i = 1 ;i<tmp.length;i++){
+            pricestr += tmp[i];
+        }
+        this.setState({
+            singlePrice : parseInt(pricestr),
+            price : this.props.price
         })
     }
 
@@ -31,13 +44,16 @@ class CartItems extends Component{
             <Fragment>
                     <tr>
                         <td>
-                            <img src = {process.env.PUBLIC_URL + "/images/off_navy.jpg"}></img>
+                            <img src = {process.env.PUBLIC_URL + "/images/" +this.props.img}></img>
                         </td>
                         <td id = "cart-item-name">
-                            AIR JORDAN 1 RETRO HIGH OFF-WHITE Chicago
+                            {this.props.name}
+                        </td>
+                        <td id = "size-td">
+                            {this.props.size}
                         </td>
                         <td id = "price-td">
-                            $1
+                            {this.state.price }
                         </td>
                         <td>
                             

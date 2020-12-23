@@ -27,11 +27,50 @@ app.get('/shoes/:id',function(req,res){
         
         obj = JSON.parse(data);
         tmp = obj.filter((item) => item["id"] == id);
+        
+        res.end(JSON.stringify(tmp));
+
+     });
+})
+
+app.get('/users/:id',function(req,res){
+    var obj;
+    res.header("Access-Control-Allow-Origin", "*");
+    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+        var id = req.params.id;
+        
+        obj = JSON.parse(data);
+        tmp = obj.filter((item) => item["id"] == id);
 
         res.end(JSON.stringify(tmp));
 
      });
 })
+
+
+app.post('/cart/:user/:id/:size',function(req,res){
+    var obj;
+    res.header("Access-Control-Allow-Origin", "*");
+    console.log("accessed")
+    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+        
+        
+        //res.end( data );
+        var obj = JSON.parse(data)
+        var userid = req.params.user;
+        var cartid = req.params.id;
+        var cartarr = obj[userid].cart;
+        var sizearr  = obj[userid].sizes;
+
+        cartarr.push(cartid)
+        sizearr.push(req.params.size)
+        var ans = JSON.stringify(obj);
+        
+        fs.writeFileSync(__dirname + "/" + "users.json",ans);
+        
+     });
+})
+
 
 
 var server = app.listen(8085, function () {

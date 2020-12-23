@@ -8,6 +8,7 @@ import Card from '../Card'
 import CartItems from './CartItems'
 
 import Recom from '../Comps/Recommendation'
+import axios from 'axios'
 
 function DeleteRow(i){
     var row = "#" + i;
@@ -20,11 +21,60 @@ class ShoppingCart extends Component{
         super(props);
     }
 
+    state = {
+        sizes:[],
+        cart:[],
+        shoesinfos:[]
+    }
+
     componentDidMount(){
         this.setState({
             DeleteFunc : DeleteRow
         })
+
+        var url = "http://localhost:8085/users/1"
+        var obj;
+        fetch(url)
+        .then((response)=>response.json())
+        .then((data)=>{
+            this.setState({
+                sizes : data[0]["sizes"],
+                cart : data[0]["cart"]
+            })
+            var url2 = "http://localhost:8085/shoes/"
+            var cartarr = this.state.cart
+            var i = 0 ;
+            cartarr.map((item)=>{
+
+
+                fetch(url2 + item)
+                .then((res)=>res.json())
+                .then((data)=>{
+                    var img = data[0]["image"]
+                    var name = data[0]["name"]
+                    console.log("size is ",i)
+                    var price = data[0]["sizes"][this.state.sizes[i]]
+                    var size = this.state.sizes[i];
+                    console.log(price," ",size)
+                    var arr = [img,name,price,size]
+                    
+                    var joined = [arr]                    
+                    this.setState({
+                        shoesinfos:[...this.state.shoesinfos,joined]
+                    })
+                    i++;
+                    
+                })
+            })
+        })
+
+        
+
+        
     }
+
+    
+
 
     render(){
         return(
@@ -37,16 +87,20 @@ class ShoppingCart extends Component{
                             <tr>
                                 <th scope="col" id = "item">Item</th>
                                 <th scope="col" id = "name">Name</th>
+                                <th scope="col" id = "size">Size</th>
                                 <th scope="col" id = "price">Price</th>
                                 <th scope="col" id = "amount">Amount</th>
                                 <th scope="col" id ="delete"></th>
                             </tr>
                         </thead>
                         <tbody>
-
-                            <CartItems key = "1" />    
-                            <CartItems key = "2"/>  
-                            <CartItems key = "3"/>    
+                            {
+                                this.state.shoesinfos.map((item)=>{
+                                    return <CartItems img = {item[0][0]  } name = {item[0][1]} price = {item[0][2]} 
+                                        size = {item[0][3]}
+                                    ></CartItems>
+                                })
+                            }
                            
                         </tbody>
                     </table>

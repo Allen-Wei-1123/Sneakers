@@ -27,7 +27,7 @@ class FrontPage extends React.Component{
             })
         });
 
-       
+        
     }
 
 

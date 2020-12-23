@@ -59,7 +59,7 @@ class Top extends Component{
                             <li id = "top-li"><a class = "title" href = "#">Streetwear</a></li>
                             <li id = "top-li"><a class = "title" href = "#">New Arrivals</a></li>
                             <li id = "top-li"><a class = "title" href = "#">Supreme</a></li>
-                            <li id = "top-li"><a class = "title" href = "/login">Log In</a></li>
+                            <li id = "top-li"><a class = "title" href = "/cart">Cart</a></li>
                         </ul>
 
                         

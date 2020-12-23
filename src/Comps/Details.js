@@ -5,11 +5,13 @@ import Bot from '../Bottom'
 import Recom from './Recommendation'
 import '../css/Details.css'
 import $ from 'jquery'
+import axios from 'axios'
 class Details extends Component{
     constructor(props){
         super(props)
     }
     state = {
+        id : "",
         dataset : [],
         image:"",
         name : "",
@@ -17,7 +19,9 @@ class Details extends Component{
         price : "",
         sizes:{},
         brand:"",
-        shoesid: ""
+        shoesid: "",
+        carts:[],
+        selectedsize:""
     }
     componentDidMount(){
         var url = window.location.href;
@@ -32,24 +36,40 @@ class Details extends Component{
         .then((response)=>response.json())
         .then((data)=>{
             this.setState({
+                id : id,
                 dataset : data[0],
                 image: data[0]["image"],
                 name: data[0]["name"],
                 description: data[0]["description"],
                 price : data[0]["price"],
                 sizes : data[0]["sizes"],
-                brand: data[0]["brand"]
+                brand: data[0]["brand"],
+                shoesid:id
             })
         });
         this.handleShoes = this.handleShoes.bind(this)
         
-
+        fetch("http://localhost:8085/users/1")
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data[0]["cart"])
+            this.setState({
+                carts : data[0]["cart"]
+            })
+        })
 
     }
 
     handleShoes = (e) =>{
 
         var id = e.currentTarget.id
+
+
+
+        this.setState({
+            selectedsize:e.target.value
+        })
+
         var fakeid = id;
         if(id[id.length-1] == 'h'){
             var i = 0 ;
@@ -85,6 +105,29 @@ class Details extends Component{
             }
 
         }
+    }
+
+    handleAdd = e =>{
+    
+        e.preventDefault()
+
+        var idnum = this.state.shoesid;
+        console.log("idnum ",idnum)
+        var shoesize = ""
+        for(var i = 1;i < idnum.length;i++){
+            if(idnum[i] == 'h'){
+                shoesize+='.5';
+                break;
+            }
+            shoesize +=  (idnum[i])
+        }
+        console.log("shoessize ",shoesize)
+        var baseurl = "http://localhost:8085/cart/0/"+this.state.id+ "/" + shoesize
+        
+        axios.post(baseurl).then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
     }
 
     render(){
@@ -171,7 +214,7 @@ class Details extends Component{
                             <div class = "buy-btn-div">
                                 
                                 <a>
-                                    <div class = "buy-now-btn">
+                                    <div class = "buy-now-btn" onClick = {this.handleAdd}>
                                             Add to Cart
                                     </div>
                                 </a>
