@@ -73,6 +73,37 @@ app.post('/cart/:user/:id/:size',function(req,res){
 
 
 
+app.post('/remove/:user/:index',function(req,res){
+    var obj;
+    res.header("Access-Control-Allow-Origin", "*");
+    console.log("accessed")
+    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, data) {
+        
+            var obj = JSON.parse(data);
+            var userid = req.params.user;
+            var val = req.params.index;
+
+            var cartarr = obj[userid].cart;
+            var sizearr  = obj[userid].sizes;
+
+            //process start 
+
+            var ind = cartarr.indexOf(val);
+
+            console.log("ind is ",ind)
+            cartarr.splice(ind,1);
+            sizearr.splice(ind,1);
+
+            //process end
+
+            var ans = JSON.stringify(obj)
+
+            fs.writeFileSync(__dirname + "/" + "users.json",ans);
+     });
+})
+
+
+
 var server = app.listen(8085, function () {
     var host = server.address().address
     var port = server.address().port

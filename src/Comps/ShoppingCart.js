@@ -28,13 +28,20 @@ class ShoppingCart extends Component{
     }
 
 
-    deleteTblCell(value){
+    deleteTblCell(id, value){
         var tmp = [...this.state.shoesinfos];
         var filteredtmp  = tmp.filter((item)=>item[0][1] != value)
         console.log(filteredtmp)
         
         this.setState({
             shoesinfos:filteredtmp
+        })
+
+        console.log("id is ",id);
+
+        var baseurl = "http://localhost:8085/remove/0/"+id
+        axios.post(baseurl).then(res =>{
+            console.log("done")
         })
         
     }
@@ -110,7 +117,7 @@ class ShoppingCart extends Component{
                         <tbody>
                             {
                                 this.state.shoesinfos.map((item)=>{
-                                    return <CartItems key = {item[0][4]} img = {item[0][0]  } name = {item[0][1]} price = {item[0][2]} 
+                                    return <CartItems key = {item[0][4]} idnum = {item[0][4]}img = {item[0][0]  } name = {item[0][1]} price = {item[0][2]} 
                                         size = {item[0][3]} deleteCell = {this.deleteTblCell}
                                     ></CartItems>
                                 })

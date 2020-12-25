@@ -5,7 +5,7 @@ import '../css/ShoppingCart.css'
 
 class CartItems extends Component{
     deleteclicked = e =>{
-        this.props.deleteCell(this.props.name);
+        this.props.deleteCell(this.props.idnum,this.props.name);
     }
 
     AmountChanged = e =>{
