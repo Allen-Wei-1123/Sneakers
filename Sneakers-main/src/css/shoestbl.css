@@ -33,6 +33,7 @@
 
 #sort-by-price-desc , #sort-by-price-asc{
     text-align: left;
+    padding-left: 30px;
     /* padding-left: 30px; */
 
 }
@@ -88,4 +89,9 @@
 .product-fade-exit-active {
   opacity: 0;
   transition: opacity 1ms;
+}
+
+#flexCheckIndeterminate{
+    width: 15px;
+    height: 15px;
 }

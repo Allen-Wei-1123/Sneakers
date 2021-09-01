@@ -60,7 +60,6 @@ class LoginPage extends Component{
         return(
             <Fragment>
                 <Top/>
-                <ShortCut></ShortCut>
                 <div class = "LoginForm">
                     <form >
                         <div class="form-group">

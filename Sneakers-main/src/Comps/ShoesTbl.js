@@ -201,6 +201,18 @@ class ShoesTbl extends Component{
         )
     }
 
+    recommended_chckbox(){
+        if(this.state.recommended_clicked == true || localStorage.getItem("isrecommended") == true){
+            return (
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" checked/>
+            )
+        }else{
+            return (
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" />
+            )
+        }
+    }
+
     collapsible(){
         return(
             <Fragment>
@@ -236,7 +248,14 @@ class ShoesTbl extends Component{
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
       <div class="card-body" id = "sort-by-price-asc" onClick = {this.handleRecommend}>
-            See Recommended
+          
+            {/* <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate"/> */
+                this.recommended_chckbox()
+            }
+            
+            <label class="form-check-label" for="flexCheckIndeterminate">
+                See Recommended
+            </label>
       </div>
     </div>
   </div>
@@ -274,7 +293,6 @@ class ShoesTbl extends Component{
                 </CSSTransition>
             )))
         }
-        
     }
 
     render(){

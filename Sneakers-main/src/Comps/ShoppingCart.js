@@ -150,7 +150,6 @@ class ShoppingCart extends Component{
         return(
             <Fragment>
                 <Top/>
-                <ShortCut></ShortCut>
                 <div className = "tblview" >
                     <table className="table" data-testid = "todo-1">
                         <thead>
