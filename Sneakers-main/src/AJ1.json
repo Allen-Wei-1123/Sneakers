@@ -1,0 +1,112 @@
+[
+        {
+            "id": 1,
+            "image": "AJ1Fragment.jpeg",
+            "name": "Jordan 1 High OG SP Fragment x Travis Scott",
+            "price": "$5400",
+            "sizes":{
+              "9.5":"$5900",
+              "10":"$6000",
+              "10.5":"$7000",
+              "11":"$9000"
+            },
+            "recommended":"true"
+            ,
+             "brand":"Jordan"
+            ,
+            "description": "The Air Jordan 1 High OG SP Fragment Design x Travis Scott fragment draws inspiration from a Jordan 1 Royal press sample from 1985 with its white and blue tumbled leather upper. Similar to previous Travis Scott Jordan 1s, signature reverse Swooshes and hidden stash pockets in the collar add on to the classic design. From there, both Travis Scott's Cactus Jack and Fragment logos are debossed in black on the heel wrap.The Air Jordan 1 High OG SP Fragment Design x Travis Scott released in July of 2021 and retailed for $200."
+          }
+          ,
+          {
+            "id": 2,
+            "image": "AJ1Mocha.jpeg",
+            "name": "Jordan 1 Dark Mocha",
+            "price": "$1000",
+            "sizes":{
+              "9.5":"$900",
+              "10":"$1000",
+              "10.5":"$8000",
+              "11":"$7000"
+            },
+            "recommended":"true"
+            ,
+             "brand":"Jordan"
+            ,
+            "description": "The Nike Air Jordan 1 Dark Mocha brings together a white upper, black overlays, and brown suede for a Travis-approved color combination that also dressed last year's aforementioned sneaker. There's no reverse Swoosh on this release, but we do get the iconic Jumpman and Wings branding."
+          }
+          ,
+          {
+            "id": 3,
+            "image": "AJ1Obsidian.jpeg",
+            "name": "Jordan 1 Obsidian",
+            "price": "$2000",
+            "sizes":{
+              "9.5":"$300",
+              "10":"$4000",
+              "10.5":"$8000",
+              "11":"$7000"
+            },
+            "recommended":"false"
+            ,
+             "brand":"Jordan"
+            ,
+            "description": "The Air Jordan 1 Retro High OG is a work of nostalgia, modernizing the 1985 icon's distinctive elements to honor Michael Jordan's legendary career arc. Debuted in August 2019, this 'Obsidian' version tributes MJ's college alma mater through a team-inspired, color block palette on the leather upper."
+          }
+          ,
+          {
+            "id": 4,
+            "image": "AJ1OffUB.jpeg",
+            "name": "Jordan 1 Obsidian",
+            "price": "$2000",
+            "sizes":{
+              "9.5":"$300",
+              "10":"$4000",
+              "10.5":"$8000",
+              "11":"$7000"
+            },
+            "recommended":"false"
+            ,
+             "brand":"Jordan"
+            ,
+            "description": "Time for some Tobacco Road vibes with these Jordan 1 Retro Off-Whites. Also known as the “UNC” editions, these Jordan 1s are the third colorway designed by Virgil Abloh and made in collaboration with his Off-White label. The sneakers come in a white, dark powder blue and cone colorway, with a white and blue deconstructed leather upper and Off-White detailing throughout. If you’re a fan of Virgil Abloh’s work and want to rep Off-White, this pair is another must-have."
+          }
+          ,
+          {
+            "id": 5,
+            "image": "AJ1PineGreen.jpeg",
+            "name": "Jordan 1 Pine Green",
+            "price": "$2000",
+            "sizes":{
+              "8.5":"$300",
+              "9":"$4000",
+              "10.5":"$8000",
+              "11":"$7000"
+            },
+            "recommended":"false"
+            ,
+             "brand":"Jordan"
+            ,
+            "description": "The Air Jordan 1 Retro High OG 'Pine Green' showcases a modified take on the silhouette's classic 'Black Toe' design, first introduced to the world in 1985. The leather high-top employs a black and white color scheme with Pine Green accents on the heel, outsole and leather wings that wrap around the collar."
+          }
+          ,
+          {
+            "id": 6,
+            "image": "AJ1smoke.jpeg",
+            "name": "Jordan 1 Smoke Grey",
+            "price": "$4000",
+            "sizes":{
+              "8.5":"$3300",
+              "9":"$4000",
+              "10.5":"$8400",
+              "11":"$7000"
+            },
+            "recommended":"false"
+            ,
+             "brand":"Jordan"
+            ,
+            "description": "The Air Jordan 1 Retro High OG 'Smoke Grey' showcases a pop of Varsity Red on the ankle flap, stamped with a classic Jordan Wings logo on the lateral side. The rest of the upper is finished in strictly neutral tones, highlighted by a white leather base with grey suede overlays."
+          }
+
+          
+
+]

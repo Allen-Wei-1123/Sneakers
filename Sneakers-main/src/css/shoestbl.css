@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding:  0 ;
+}
+
+
+#collap{
+    height: 100px;
+    width: 240px;
+    margin-left: 50px;
+    margin-top: 50px;
+    float: left;
+
+}
+#collap h4{
+    font-weight: bolder;
+}
+#accordion{
+    margin-top: 20px;
+}
+
+#sort-btn{
+    text-transform: uppercase;
+}
+
+#sort-by-price-desc{
+    margin-top: 10px;
+  
+}
+
+#sort-by-price-asc , #sort-by-likes{
+}
+
+#sort-by-price-desc , #sort-by-price-asc{
+    text-align: left;
+    /* padding-left: 30px; */
+
+}
+
+#sort-by-price-desc:hover, #sort-by-price-asc:hover{
+    background-color: lightgray;
+    cursor: pointer;
+}
+
+
+
+#shoes-tbl{
+    float: left;
+    margin-left: 60px;
+    height: 900px;
+    width: 850px;
+    margin-top: 50px;
+    /* background-color: red; */
+    position: relative;
+}
+
+#bottompage{
+     /* background-color: red; */
+     width: 100%;
+     height: 100px;
+     float: left;
+}
+
+
+#pagination{
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    left: 38%;
+    bottom: 0px;
+    margin-bottom: 20px;
+    /* margin-top: 10px; */
+}
+
+.product-fade-enter {
+    opacity: 0;
+  }
+.product-fade-enter-active {
+  opacity: 1;
+  /* transition: all ; */
+    transition-duration: 2s;
+    transition-timing-function: linear forwards;
+    transition-property: all;
+}
+.product-fade-exit {
+  opacity: 1;
+}
+.product-fade-exit-active {
+  opacity: 0;
+  transition: opacity 1ms;
+}

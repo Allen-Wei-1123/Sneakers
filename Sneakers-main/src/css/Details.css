@@ -1,0 +1,175 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+
+.shoes-father{
+    width: 100%;;
+    height: 800px;
+    /* background-color: red; */
+}
+
+.images{
+    float: left;
+    width: 900px;
+    /* background-color: yellow; */
+    height: 800px;
+}
+
+.big-image{
+    width: 900px;
+    height: auto;
+    /* background-color: green; */
+}
+.big-image{
+    object-fit: cover;
+}
+.small-image{
+    width: 100%;
+    height: 110px;
+    /* background-color: brown; */
+    margin-top: 20px;
+    line-height: 110px;
+    text-align: center;
+
+}
+
+.small-image ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.small-image img{
+    height: 100px;
+    width: 100px;
+}
+
+
+/* shoes infos start */
+.shoes-infos{
+    float: left;
+    /* background-color: purple; */
+    height: 100%;
+    width:455px;
+}
+
+.details-brand{
+    width: 100%;
+    height: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+.shoes-infos-name{
+    width: 100%;
+    height: 50px;
+    /* background-color: blue; */
+    font-size: 25px;
+    font-weight: 600;
+    margin-top: 13px;
+    display: inline-block;
+    min-height: 50px;
+}
+
+.social-medias{
+    width: 100%;
+    height: 50px;
+    /* background-color: red; */
+    margin-top: 15px;
+}
+
+.social-medias ul li {
+    display: inline-block;
+    margin-right: 5px;
+}
+.social-medias ul li  a img{
+    
+    border-radius: 10px;
+   
+}
+
+.shoes-description{
+    width: 100%;
+    /* height: 200px; */
+    /* background-color: red; */
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    overflow: auto;
+}
+
+.price-div{
+    width: 100%;
+    height: 50px;
+    /* background-color: green; */
+    margin-top: 30px;
+    line-height: 50px;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Noto Sans TC', sans-serif;
+}
+
+
+.shoes-sizes{
+    width: 100%;
+    height: 320px;
+    /* background-color: green; */
+}
+
+.sizes-chart{
+    width: 100%;
+    overflow: auto;
+    /* background-color: red; */
+    
+}
+
+
+.sizes-chart ul li {
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 10px;
+}
+
+.sizes-chart ul li div{
+    height: 43px;
+    width: 78px;
+    /* background-color: green; */
+    line-height: 43px;
+    text-align: center;
+    border: 1px solid lightgray;
+
+}
+
+.sizes-chart ul li div:hover{
+    background-color: black;
+    color: white;
+}
+.buy-btn-div{
+    width: 100%;
+    height: 120px;
+    /* background-color: yellow; */
+    margin-top: 30px;
+    line-height: 120px;
+}
+
+.buy-btn-div a {
+    background-color: purple;
+    width: 222px;
+    height: 70px;
+    display: inline-block;
+    margin-top: 20px;
+    
+}
+
+.buy-now-btn{
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    line-height: 70px;
+    text-align: center;
+    color: white;
+}
+
+/* shoes infos end */

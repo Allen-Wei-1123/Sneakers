@@ -1,0 +1,17 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+
+
+.LoginForm{
+    margin: 0 auto;
+    width: 900px;
+    height:520px;
+    padding-top: 90px;
+}
+
+#subbtn{
+    color: white;
+}

@@ -1,0 +1,390 @@
+[
+ {
+   "id": 1,
+   "image": "offaj.jpg",
+   "name": "AIR JORDAN 1 RETRO HIGH OFF-WHITE Chicago",
+   "price": "$3000",
+   "sizes":{
+     "9.5":"$1000",
+     "10":"$1200",
+     "10.5":"$1300",
+     "11":"$1400"
+   },
+   "recommended":"true"
+   ,
+    "brand":"Jordan"
+   ,
+   "description": "The Off-White x Air Jordan 1 Retro High OG was one of the most highly anticipated footwear collaborations of 2017. It marked the first time Virgil Abloh, founder of the Milan-based fashion label and Jordan Brand had teamed up. Nicknamed \"The 10\" edition, this pair comes in the original Chicago-themed white, black and varsity red colorway. Featuring a white, red and black-based deconstructed leather upper with a Swooshless medial side branded with \"Off-White for Nike Air Jordan 1, Beaverton, Oregon, USA © 1985.\""
+ },
+ {
+   "id": 2,
+   "image": "offvape.jpg",
+   "name": "Nike Air Vapormax Off-White 2018",
+   "price": "$2500",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400",
+      "12":"$1500"
+  }
+  ,
+  "recommended":"true"
+   ,
+   "brand":"Nike"
+
+   ,
+   "description": "The clean white Off-White Nike Air VaporMaxs are pure, deconstructed “hype.” Coming after the second black version of the Off-White VaporMax, these feature cutting-edge technology with its Flyknit upper, dynamic Flywire lacing system, and state-of-the-art Air VaporMax unit, providing insane comfort while also stuntin on every other shoe on the street. These dropped in April of 2018 and are a must Bid for any Virgil Abloh fan."
+ },
+ {
+   "id": 3,
+   "image": "OffConv2.jpg",
+   "name": "Converse Chuck Taylor All-Star 70s Hi Off-White",
+   "price": "$778",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"true"
+   ,
+   "brand":"Converse"
+   ,
+  
+   "description": "Virgil is back at it again with the Converse Chuck Taylor All-Star 70s Hi Off-White. These legendary sneakers come with an all-white upper, stripped midsole, and orange sole. The Off-White Chucks released in October 2018 and retailed for $130. Add some versatile heat to your sneaker collection and buy these on StockX."
+ },
+ {
+   "id": 4,
+   "image": "black_off_af1.jpg",
+   "name": "Nike Air Force 1 Low Off-White Black White",
+   "price": "$2200",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+   ,
+   "description": "The force is within you, as Nike uses their very own and release the Air Force 1 Low Off-White Black White. This AF1 comes with a black upper, white Nike “Swoosh”, black midsole, and a black sole. These sneakers were released December 2018 and retailed for $170. Thrive with the force and place a Bid on StockX today."
+ },
+ {
+   "id": 5,
+   "image": "off_air_max.jpg",
+   "name": "Nike Air Max 90 OFF-WHITE Black",
+   "price": "$2300",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+
+   ,
+   "description": "It’s officially 2019 and Virgil is back applying pressure on the sneaker world with the release of the Air Max 90 Off-White Black. This AM 90 is sporting a black upper, white Nike “Swoosh”, black midsole, and a black sole. These sneakers released in January 2019 and retailed for $160. The Virgil x Nike World Tour continues, so don’t miss out and place a Bid on StockX today."
+ },
+ {
+   "id": 6,
+   "image": "kaws_dior.jpg",
+   "name": "Dior B23 High Top Logo Oblique",
+   "price": "$1300",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+   ,
+   "description": ""
+ },
+ {
+   "id": 7,
+   "image": "off_presto.jpg",
+   "name": "Nike Air Presto Off-White White",
+   "price": "$1000",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+   ,
+   "description": "After the release of his critically-acclaimed \"The Ten\" project with Nike, Virgil Abloh is back again with another iteration of the Nike Air Presto Off-White. Continuing with the deconstructed and industrial vibe, this pair features a monochromatic white colorway. In addition, there is a grey Nike Swoosh (with orange detailing) stitched onto the side panel, \"AIR\" written on the lateral side of the heel in black, and a white Nike tag on the tongue. Sure to be one of the hottest shoes of 2018, this pair dropped in June 2018 for a retail price of $160."
+ },
+ {
+   "id": 8,
+   "image": "off_aj5.jpg",
+   "name": "Jordan 5 Retro Off-White Black",
+   "price": "$975",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+   ,
+   "description": "Virgil Abloh added a second Jordan silhouette to his series of Nike collaborations with the Jordan 5 Retro High Off-White Black, now available on StockX. This release pays homage to the first Jordan that Virgil ever owned, the Air Jordan 5 Black Metallic. In signature fashion, Virgil has reimagined this classic silhouette in a way that embraces the importance of Nike Air technology."
+ },
+ {
+   "id": 9,
+   "image": "off_navy.jpg",
+   "name": "Nike Dunk Low Off-White University Gold Midnight Navy",
+   "price": "$600",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+   ,
+   "description": "Virgil Abloh pays homage to skate culture’s adoption of 1980’s Nike Basketball silhouettes with the Nike Dunk Low Off-White Michigan, now available on StockX. When Nike unveiled the Dunk as the centerpiece of their Nike College Color’s program in 1985, seven different colleges were represented in the first colorways offered, with Michigan was one of the first schools."
+ },
+ {
+   "id": 10,
+   "image": "off_pink.jpg",
+   "name": "Nike Zoom Fly Off-White Pink",
+   "price": "$666",
+   "sizes":{
+      "9.5":"$1000",
+      "10":"$1200",
+      "10.5":"$1300",
+      "11":"$1400"
+  }
+  ,
+  "recommended":"false"
+   ,
+   "brand":"Nike"
+   ,
+   "description": "Virgil looks to continue his 2018 Off-White and Nike collab tour with the Nike Zoom Fly Off-White Pink. This sneaker comes with a translucent upper featuring pink accents, a pink Nike “Swoosh”, pink midsole, and a pink sole. The electrifying shoe released in October 2018 and retailed for $170. This Zoom Fly is expecting to resale for big numbers, so place a Bid now on StockX."
+ }
+ ,
+ {
+  "id": 11,
+  "image": "jordan1/AJ1Fragment.jpeg",
+  "name": "Jordan 1 High OG SP Fragment x Travis Scott",
+  "price": "$5400",
+  "sizes":{
+    "9.5":"$5900",
+    "10":"$6000",
+    "10.5":"$7000",
+    "11":"$9000"
+  },
+  "recommended":"true"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Air Jordan 1 High OG SP Fragment Design x Travis Scott fragment draws inspiration from a Jordan 1 Royal press sample from 1985 with its white and blue tumbled leather upper. Similar to previous Travis Scott Jordan 1s, signature reverse Swooshes and hidden stash pockets in the collar add on to the classic design. From there, both Travis Scott's Cactus Jack and Fragment logos are debossed in black on the heel wrap.The Air Jordan 1 High OG SP Fragment Design x Travis Scott released in July of 2021 and retailed for $200."
+}
+,
+{
+  "id": 12,
+  "image": "jordan1/AJ1Mocha.jpeg",
+  "name": "Jordan 1 Retro High Dark Mocha",
+  "price": "$1000",
+  "sizes":{
+    "9.5":"$900",
+    "10":"$1000",
+    "10.5":"$8000",
+    "11":"$7000"
+  },
+  "recommended":"true"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Nike Air Jordan 1 Dark Mocha brings together a white upper, black overlays, and brown suede for a Travis-approved color combination that also dressed last year's aforementioned sneaker. There's no reverse Swoosh on this release, but we do get the iconic Jumpman and Wings branding."
+}
+,
+{
+  "id": 13,
+  "image": "jordan1/AJ1Obsidian.jpeg",
+  "name": "Jordan 1 Obsidian",
+  "price": "$2000",
+  "sizes":{
+    "9.5":"$300",
+    "10":"$4000",
+    "10.5":"$8000",
+    "11":"$7000"
+  },
+  "recommended":"false"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Air Jordan 1 Retro High OG is a work of nostalgia, modernizing the 1985 icon's distinctive elements to honor Michael Jordan's legendary career arc. Debuted in August 2019, this 'Obsidian' version tributes MJ's college alma mater through a team-inspired, color block palette on the leather upper."
+}
+,
+{
+  "id": 14,
+  "image": "jordan1/AJ1OffUB.jpeg",
+  "name": "Jordan 1 Offwhite University Blue",
+  "price": "$2000",
+  "sizes":{
+    "9.5":"$300",
+    "10":"$4000",
+    "10.5":"$8000",
+    "11":"$7000"
+  },
+  "recommended":"false"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "Time for some Tobacco Road vibes with these Jordan 1 Retro Off-Whites. Also known as the “UNC” editions, these Jordan 1s are the third colorway designed by Virgil Abloh and made in collaboration with his Off-White label. The sneakers come in a white, dark powder blue and cone colorway, with a white and blue deconstructed leather upper and Off-White detailing throughout. If you’re a fan of Virgil Abloh’s work and want to rep Off-White, this pair is another must-have."
+}
+,
+{
+  "id": 15,
+  "image": "jordan1/AJ1PineGreen.jpeg",
+  "name": "Jordan 1 Pine Green",
+  "price": "$2000",
+  "sizes":{
+    "8.5":"$300",
+    "9":"$4000",
+    "10.5":"$8000",
+    "11":"$7000"
+  },
+  "recommended":"false"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Air Jordan 1 Retro High OG 'Pine Green' showcases a modified take on the silhouette's classic 'Black Toe' design, first introduced to the world in 1985. The leather high-top employs a black and white color scheme with Pine Green accents on the heel, outsole and leather wings that wrap around the collar."
+}
+,
+{
+  "id": 16,
+  "image": "jordan1/AJ1smoke.jpeg",
+  "name": "Jordan 1 Smoke Grey",
+  "price": "$4000",
+  "sizes":{
+    "8.5":"$3300",
+    "9":"$4000",
+    "10.5":"$8400",
+    "11":"$7000"
+  },
+  "recommended":"false"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Air Jordan 1 Retro High OG 'Smoke Grey' showcases a pop of Varsity Red on the ankle flap, stamped with a classic Jordan Wings logo on the lateral side. The rest of the upper is finished in strictly neutral tones, highlighted by a white leather base with grey suede overlays."
+}
+,
+{
+  "id": 17,
+  "image": "jordan1/AJ1Balvin.webp",
+  "name": "Jordan 1 High J Balvin",
+  "price": "$4000",
+  "sizes":{
+    "8.5":"$300",
+    "9":"$4000",
+    "10.5":"$8900",
+    "11":"$7000"
+  },
+  "recommended":"false"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Air Jordan 1 High J Balvin features a layered tie-dye canvas upper with designed jagged edges to expose solid black leather patches. ... A light pink sole and J Balvin's smiley face logo on the tongue and insole add the finishing touches to this one-of-a-kind Jordan 1."
+
+}
+,
+{
+  "id": 18,
+  "image": "jordan1/AJ1Dior.webp",
+  "name": "Jordan 1 x Dior High",
+  "price": "$4000",
+  "sizes":{
+    "8.5":"$300",
+    "9":"$4000",
+    "10.5":"$8900",
+    "11":"$7000"
+  },
+  "recommended":"true"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "The Dior x Air Jordan 1 High sneakers are the first collaboration between the luxury powerhouse and sneaker giant. Crafted from wolf grey and sail white leather, these Air Jordan 1 High sneakers take on the iconic high-top silhouette, and update it by way of a grey Dior monogram swoosh logo."
+
+}
+,
+{
+  "id": 19,
+  "image": "jordan1/AJ1HighTwist.webp",
+  "name": "Jordan 1 High Twist",
+  "price": "$4000",
+  "sizes":{
+    "8.5":"$300",
+    "9":"$4000",
+    "10.5":"$8900",
+    "11":"$7000"
+  },
+  "recommended":"true"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "Add a twist to your sneaker rotation and grab the Jordan 1 Retro High Twist (W). This AJ 1 comes with a white upper plus black accents, black Nike “Swoosh”, white midsole, and a black sole. These sneakers released in May 2019 and retailed for $160. Calling all ladies, place your Bids for these sneakers on StockX ASAP"
+
+}
+,
+{
+  "id": 20,
+  "image": "jordan1/AJ1Turbo.jpeg",
+  "name": "Jordan 1 Retro High Turbo Green",
+  "price": "$4000",
+  "sizes":{
+    "8.5":"$300",
+    "9":"$4000",
+    "10.5":"$8900",
+    "11":"$7000"
+  },
+  "recommended":"true"
+  ,
+   "brand":"Jordan"
+   ,
+   "types" :"AJ1"
+  ,
+  "description": "Shift your sneaker collection to another gear and cop the Jordan 1 Retro High Turbo Green. This AJ 1 sports a white upper with green accents, green Nike “Swoosh”, white midsole, and green sole. These sneakers released in February 2019 and retailed for $160. Looking for the right sneakers to burn rubber in? Well buy these now on StockX."
+
+}
+
+]
