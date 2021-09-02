@@ -16,6 +16,7 @@ class ShoesTbl extends Component{
 
     constructor(props){
         super(props)
+        console.log(props)
         this.click_pagination = this.click_pagination.bind(this)
     }
 
@@ -160,6 +161,8 @@ class ShoesTbl extends Component{
             currpage:page+1
         })
     }
+
+    
     
     buildPagination(){
 
@@ -294,7 +297,7 @@ class ShoesTbl extends Component{
             )))
         }
     }
-
+    
     render(){
         return(
             <Fragment>

@@ -145,7 +145,6 @@ class Details extends Component{
         return(
             <Fragment>
                 <Top/>
-                <ShortCut/>
                 <div class = "shoes-father">
                     <div class = "images">
                         <div class = "big-image">
