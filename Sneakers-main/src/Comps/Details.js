@@ -41,6 +41,7 @@ class Details extends Component{
                 description: data["shoeDescription"],
                 sizes: data["sizes"],
                 brand:data["shoetype"],
+                shoeid:data["_id"]
             })
         })
         

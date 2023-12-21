@@ -102,7 +102,7 @@ const ShoeForm = () => {
                                                             shoetype:shoesType,
                                                             time:getCurrentDateTime(),
                                                             imgurl:url,
-                                                            poster:ParseData["id"]})
+                                                            poster:ParseData["_id"]})
                         .then(response=>{
                             console.log(response);
                         }).catch((err)=>{

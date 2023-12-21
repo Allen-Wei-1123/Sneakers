@@ -58,6 +58,14 @@ app.post('/login',jsonparser ,async(req,res)=>{
     
 })
 
+async function findUserById(userId, db) {
+    const usersCollection = db.collection('users');
+  
+    // Replace 'userIdField' with the actual field in your user documents
+    const user = await usersCollection.findOne({ _id: new ObjectId(userId) });
+    console.log(userId,user)
+    return user;
+  }
 
 app.post("/storeShoes",jsonparser,async(req,res)=>{
     try{
@@ -65,13 +73,26 @@ app.post("/storeShoes",jsonparser,async(req,res)=>{
             await client.connect();
             console.log("connected")
             const database = client.db("store");
-            const collection = database.collection("shoes");
+            var collection = database.collection("shoes");
             const dataToInsert = req.body;
             console.log(dataToInsert)
             const result = await collection.insertOne(req.body);
+            const insertedID = result.insertedId
             if(result){
-                console.log(result)
-                res.json(result);
+
+                const user = await findUserById(dataToInsert.poster,database)
+                collection = database.collection("users")
+                if(!user.PostShoes){
+                    await collection.updateOne(
+                        {_id:new ObjectId(dataToInsert.poster)},
+                        {$set:{PostShoes:[]}}
+                    )
+                }
+                const result = await collection.findOneAndUpdate(
+                    { _id: new ObjectId(dataToInsert.poster) }, // Find user by ID
+                    { $push: { PostShoes: insertedID } }, // Add newItem to the PostShoes field
+                    { returnDocument: 'after' } // Return the updated document
+                  );
             }
     }finally{
         await client.close();
@@ -209,7 +230,7 @@ const emptyCartAndNotifyInventory = async (userId, cartItems) => {
   
     try {
 
-        const connection = await amqp.connect('amqp://localhost');
+        const connection = await amqp.connect('amqp://127.0.0.1');
         const channel = await connection.createChannel();
 
       const exchange = 'inventory';
@@ -219,36 +240,78 @@ const emptyCartAndNotifyInventory = async (userId, cartItems) => {
       await channel.publish(exchange, routingKey, Buffer.from(JSON.stringify({ userId, cartItems })));
   
       console.log(`Notification sent: Cart emptied for user ${userId}`);
+      await channel.close();
+      await connection.close();
     } catch (error) {
       console.error('Error publishing message to RabbitMQ:', error.message);
     } finally {
-      await channel.close();
-      await connection.close();
+      
     }
 };
+
+function removeInventories(cartItemId,userid){
+
+    return new Promise(async(resolve,reject)=>{
+       
+        await client.connect();
+        const db = client.db("store")
+        const Usercollection = db.collection("users")
+        const Shoescollection = db.collection("shoes")
+        await Shoescollection.deleteOne({_id:new ObjectId(cartItemId)},(err,res)=>{
+            if(err)throw err; 
+            console.log(res)
+        })
+        console.log("userid is ",userid)
+        console.log("cartitemid is ",cartItemId);
+        //const user = await Usercollection.findOneAndUpdate
+        await Usercollection.findOneAndUpdate(
+            {_id: new ObjectId(userid)},
+            {$pull: {"cart":{"shoeid":cartItemId}}},
+            (err,result)=>{
+                if(err) throw err;
+                console.log("Removed from ",userid);
+            }
+        )
+        client.close();
+    })
+}
 const setupInventorySubscriber = async () => {
     
     try {
-        const connection = await amqp.connect('amqp://localhost');
+        const connection = await amqp.connect('amqp://127.0.0.1');
         const channel = await connection.createChannel();
-   
-      const exchange = 'inventory';
-      const routingKey = 'cart.emptied';
+
+        const exchange = 'inventory';
+        const routingKey = 'cart.emptied';
+            
+        await channel.assertExchange(exchange, 'direct', { durable: false });
+        const queue = await channel.assertQueue('', { exclusive: true });
+        await channel.bindQueue(queue.queue, exchange, routingKey);
+    
+        console.log('Inventory subscriber waiting for notifications...');
         
-      await channel.assertExchange(exchange, 'direct', { durable: false });
-      const queue = await channel.assertQueue('', { exclusive: true });
-      await channel.bindQueue(queue.queue, exchange, routingKey);
-  
-      console.log('Inventory subscriber waiting for notifications...');
-  
-      channel.consume(queue.queue, (msg) => {
-        const { userId, cartItems } = JSON.parse(msg.content.toString());
-        console.log(`Received notification: Cart emptied for user ${userId}. Cart items: ${cartItems}`);
-  
-        // Perform inventory management actions here...
-      }, { noAck: true });
+        await client.connect();
+        const db = client.db("store")
+
+        channel.consume(queue.queue, (msg) => {
+            const { userId, cartItems } = JSON.parse(msg.content.toString());
+            console.log(`Received notification: Cart emptied for user ${userId}. Cart items: ${cartItems}`);
+            
+            const promises = cartItems.map(obj=>removeInventories(obj.shoeid,userId)  )
+            
+            Promise.all(promises).then(res=>{
+                    res.forEach(result=>{
+                        console.log(result);
+                    })
+            }).catch(err=>{
+                console.log(err);
+            })
+            // Perform inventory management actions here...
+        }, { noAck: true });
     } catch (error) {
       console.error('Error setting up inventory subscriber:', error.message);
+    }finally{
+        //await client.close();
     }
 };
 setupInventorySubscriber();
