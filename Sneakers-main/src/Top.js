@@ -1,17 +1,27 @@
-import React , {Component,Fragment} from 'react';
+import React , {Component,Fragment, useState, useEffect} from 'react';
 import $ from 'jquery'
-class Top extends Component{
-    constructor(props){
-        super(props)
-    }
+import { BrowserRouter as Router, Route, Link, useHistory } from 'react-router-dom';
 
-    componentDidMount(){
-
+const Top =()=>{
     
-   
-       
+    const [userdata,setUserData] = useState()
+    const UpdateTop = ()=>{
+        if(sessionStorage.getItem("userdata") == null) return ;
+        const data = sessionStorage.getItem("userdata");
+        const obj = JSON.parse(data);
+
+        if(obj["customer"] == true){
+            return <li id = "top-li"><a class = "title" href = "/cart">Cart</a></li>
+        }else{
+            return <li id = "top-li"><a class = "title" href = "/storeshoes">Upload</a></li>
+        }
     }
-    render(){
+    const history = useHistory();
+   const  SignOutButton = ()=>{
+        sessionStorage.removeItem("userdata")
+        history.push("/login")
+    }
+    
         return(
             <Fragment>
                 <div className= "top">
@@ -59,7 +69,10 @@ class Top extends Component{
                             <li id = "top-li"><a class = "title" href = "#">Streetwear</a></li>
                             <li id = "top-li"><a class = "title" href = "#">New Arrivals</a></li>
                             <li id = "top-li"><a class = "title" href = "#">Supreme</a></li>
-                            <li id = "top-li"><a class = "title" href = "/cart">Cart</a></li>
+                            {
+                                UpdateTop()
+                            }
+                            <li id = "top-li"><a class = "title" href = "#" onClick={SignOutButton}>Sign Out</a></li>
                         </ul>
 
                         
@@ -70,7 +83,6 @@ class Top extends Component{
                
             </Fragment>
         )
-    }
 }
 
 export default Top;

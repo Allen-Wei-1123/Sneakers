@@ -1,0 +1,15 @@
+*{
+    margin:0;
+    padding: 0;
+}
+
+#storeForm{
+   height:600px;
+   width: 100%;
+   padding-top: 1%;
+}
+
+#storeForm .form-group{
+    padding-left: 25%;
+    padding-right: 25%;
+}

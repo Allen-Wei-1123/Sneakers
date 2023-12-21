@@ -1,62 +1,49 @@
-import React , {Component,Fragment} from 'react';
+import React , {Component,Fragment, useState, useEffect} from 'react';
 import Top from '../Top'
 import ShortCut from './ShortCut'
 import Bot from '../Bottom'
 import '../css/Login.css'
-
+import axios from 'axios';
 import $ from 'jquery'
+import { BrowserRouter as Router, Route, Link, useHistory } from 'react-router-dom';
+
+const LoginPage = ()=>{
 
 
-class LoginPage extends Component{
-
-    constructor(props){
-        super(props);
-    }
-    state = {
-        email:"",
-        password:"",
-        dataset:{}
-    }
-
-    handleEmail = e=>{
+    const handleEmailAction = e=>{
         var val = e.target.value;
-        this.setState({
-            email:val
-        })
+        handleEmail(val);
     }
 
-    handlePassword = e=>{
+    const handlePasswordAction = e=>{
         var val = e.target.value;
-        this.setState({
-            password:val
-        })
+        handlePassword(val);
     }
+    const [email,handleEmail] = useState("");
+    const [password,handlePassword] = useState("");
+    const history = useHistory();
 
-    handleSubmit = e=>{
-        var email = this.state.email
-        var password = this.state.password
-        console.log("set")
-        fetch("http://127.0.0.1:8085/users")
-        .then((response)=>response.json())
-        .then((data)=>{
-            this.setState({
-                dataset : data.filter((item)=>item["email"] == email && item["password"] == password)
-            })
-        });
 
-        if(this.state.dataset.length > 0){
-            $('#subbtn').attr('href',"/")
+    const HandleSubmit = async(e)=>{
+        const userData = {email:email,password:password}
+        console.log(userData)
+        try{
+            console.log(userData)
+            const response = await axios.post("http://127.0.0.1:8085/login",userData)
+            console.log("login successful")
+            if(response.data){
+                console.log(response.data);
+                sessionStorage.setItem("userdata",JSON.stringify(response.data))
+                history.push("/")
+            }
+            
+        }catch(error){
+            console.log(error);
         }
-
     }
-
     
-    componentDidMount(){
-        this.handleSubmit = this.handleSubmit.bind(this)
-    }
+   
 
-
-    render(){
         return(
             <Fragment>
                 <Top/>
@@ -64,23 +51,22 @@ class LoginPage extends Component{
                     <form >
                         <div class="form-group">
                         <label for="exampleInputPassword1">Email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange = {this.handleEmail}/>
+                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={handleEmailAction}/>
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">Password</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" onChange = {this.handlePassword}/>
+                            <input type="password" class="form-control" id="exampleInputPassword1" onChange = {handlePasswordAction}/>
                         </div>
                         <div class="form-group form-check">
                             <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
                             <label class="form-check-label" for="exampleCheck1">Subscribe Us</label>
                         </div>
-                        <a  id = "subbtn" class="btn btn-primary" onClick = {this.handleSubmit}>Submit</a>
+                        <a  id = "subbtn" class="btn btn-primary" onClick = {HandleSubmit}>Login</a>
                     </form>
                 </div>
                 <Bot/>
             </Fragment>
         )
-    }
 }
 
 export default LoginPage;

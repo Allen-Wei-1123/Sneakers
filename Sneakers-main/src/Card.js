@@ -7,45 +7,40 @@ class Card extends Component{
     constructor(props){
         super(props)
     }
-
+    state={
+        data:[]
+    }
     componentDidMount(){
         // $("#a").attr("href","/shoes/"+this.props.id);
+        this.setState({
+            data:this.props.item
+        })
     }
 
     brandname(){
-        if(this.props.brand != ""){
-            return this.props.brand;
-        }
-        return "NIKE"
+        return this.state.data["shoetype"]
     }
 
     render(){
         return(
             <div class = "box-son" style = {{marginBottom : "20px"}}>
                             <div class = "box-son-img">
-                                <img src = {process.env.PUBLIC_URL+ "/images/"+this.props.img}></img>
+                                <img src = {this.state.data["imgurl"]}></img>
                             </div>
                             <div class = "company">
                                 {
                                     this.brandname()
                                 }
                             </div>
-
                             <div class = "shoes-name">
-                               <a id = "a" href = {this.props.url}>
+                               <a id = "a" href = {"/shoes/"+this.state.data["_id"]}>
 
-                                    {this.props.name}
+                                    {this.state.data["shoename"]}
                                     
                                </a>
-
-                               
-                               
-                                
                             </div>
-
-
                             <div class = "price">
-                               CAD {this.props.price}
+                               CAD ${1234}
                             </div>
 
             </div>

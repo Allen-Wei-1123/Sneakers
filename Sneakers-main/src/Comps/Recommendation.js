@@ -10,15 +10,7 @@ class Recommendations extends Component{
         dataset:[]
     }
     componentDidMount(){
-        fetch('http://localhost:8085/data')
-        .then((res)=>res.json())
-        .then((data)=>{
-
-            this.setState({
-                dataset: data
-            })
-
-        })
+        
     }
     render(){
         return(

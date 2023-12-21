@@ -17,10 +17,11 @@ class Details extends Component{
         name : "",
         description:"",
         price : "",
-        sizes:{},
+        sizes:[],
         brand:"",
         shoesid: "",
         carts:[],
+        selectedIndex:0,
         selectedsize:""
     }
     componentDidMount(){
@@ -30,113 +31,55 @@ class Details extends Component{
         var fields = url.split('/');
         var id = fields.pop();
 
-
-        
-
-        fetch("http://localhost:8085/shoes/"+id)
-        .then((response)=>response.json())
-        .then((data)=>{
+        axios.get("http://127.0.0.1:8085/shoes/"+id).then((res)=>{
+            console.log(res);
+            const data = res.data;
             this.setState({
-                id : id,
-                dataset : data[0],
-                image: data[0]["image"],
-                name: data[0]["name"],
-                description: data[0]["description"],
-                price : data[0]["price"],
-                sizes : data[0]["sizes"],
-                brand: data[0]["brand"],
-                shoesid:id
-            })
-        });
-        this.handleShoes = this.handleShoes.bind(this)
-        
-        fetch("http://localhost:8085/users/1")
-        .then((response)=>response.json())
-        .then((data)=>{
-            console.log(data[0]["cart"])
-            this.setState({
-                carts : data[0]["cart"]
+                id: data["_id"],
+                image:data["imgurl"],
+                name:data["shoename"],
+                description: data["shoeDescription"],
+                sizes: data["sizes"],
+                brand:data["shoetype"],
             })
         })
-
         
 
     }
 
-    handleShoes = (e) =>{
-
-        var id = e.currentTarget.id
+    handleShoes = (item,index) =>{
 
 
+        console.log(item["size"])
 
         this.setState({
-            selectedsize:e.target.value
+            selectedSize:item["size"],
+            selectedPrice:item["price"]
         })
-
-        var fakeid = id;
-        if(id[id.length-1] == 'h'){
-            var i = 0 ;
-            var str = ""
-            while( id[i] != 'h'){
-                str += id[i];
-                i+=1;
-            }
-            str += '.5';
-            fakeid = str; 
+        const currInd = this.state.selectedIndex;
+        $('#'+index).css('background-color','black');
+        $('#'+index).css('color','white')
+        if(currInd != index){
+            $('#'+currInd).css('background-color','white');
+            $('#'+currInd).css('color','black')
         }
-
-
-        $('#'+id).css('background-color','black');
-        $('#'+id).css('color','white')
-        var tmp  = this.state.shoesid
-        var thesize = this.state.sizes;
-        if(tmp != id){
-
-            
-            if(tmp != "" ){
-                $(tmp).css('background-color','white');
-                $(tmp).css('color','black')
-                this.setState({
-                    shoesid:'#'+id,
-                    price : thesize[fakeid]
-                })
-            }else{
-                this.setState({
-                    shoesid:'#'+id,
-                    price : thesize[fakeid]
-                })
-            }
-
-        }
+        this.setState({selectedIndex:index})
     }
 
-    handleAdd = e =>{
+    handleAdd = async (e) =>{
     
         e.preventDefault()
-
-        var idnum = this.state.shoesid;
-        console.log("idnum ",idnum)
-        var shoesize = ""
-        for(var i = 1;i < idnum.length;i++){
-            if(idnum[i] == 'h'){
-                shoesize+='.5';
-                break;
-            }
-            shoesize +=  (idnum[i])
-        }
-        console.log("shoessize ",shoesize)
-
-        if(this.state.selectedsize == ""){
-            alert("shoe size not selected!");
-        }else{
-            alert("shoes added")
-            var baseurl = "http://localhost:8085/cart/0/"+this.state.id+ "/" + shoesize
-        
-            axios.post(baseurl).then(res => {
-                console.log(res);
-                console.log(res.data);
-              })
-        }
+        const userdata = sessionStorage.getItem("userdata")
+        const userid = JSON.parse(userdata)["_id"]
+        const url = "http://127.0.0.1:8085/addCart/"+userid+"/"+this.state.id
+        console.log(url);
+        const PassValue = {id:userid,count:1, name:this.state.name,
+            size:this.state.selectedSize,price:this.state.selectedPrice,shoeid:this.state.shoeid,img:this.state.image}
+            console.log(PassValue)
+        const result = await axios.post("http://127.0.0.1:8085/addCart",PassValue)
+        .then((res)=>{
+            console.log(res);
+        })
 
         
     }
@@ -148,7 +91,7 @@ class Details extends Component{
                 <div class = "shoes-father">
                     <div class = "images">
                         <div class = "big-image">
-                                <img src = {process.env.PUBLIC_URL+ "/images/" + this.state.image}></img>
+                                <img src = {this.state.image}></img>
                         </div>
                         
                     </div>
@@ -182,7 +125,7 @@ class Details extends Component{
                         </div>
 
                         <div class = "price-div">
-                             CAD {this.state.price}
+                             CAD ${this.state.selectedPrice}
                         </div>
 
                         <div class = "shoes-sizes">
@@ -190,25 +133,14 @@ class Details extends Component{
                                 <ul>
                         
                                     {
-                                            Object.keys(this.state.sizes).map((key,i)=>{
-                                                var tmp  = key;
-                                                
-                                                if(key.includes('.')){
-                                                    var i = 0 ;
-                                                    var num = ""
-                                                    while(key[i] != '.'){
-                                                        num += key[i];
-                                                        i++;
-                                                    }
-                                                    tmp = num + "h"
-                                                }
+                                            (this.state.sizes).map((item,index)=>{
                                                 return(
                                                     <li>
                                                         <a id = "tmp">
-                                                            <div class = "size" id= {tmp}  onClick = {this.handleShoes}>
+                                                            <div class = "size" id= {index} value={item} onClick={()=>this.handleShoes(item,index)} >
                                                                     {
 
-                                                                        key
+                                                                        item["size"]
                                                                     }
                                                             </div>
                                                         </a>

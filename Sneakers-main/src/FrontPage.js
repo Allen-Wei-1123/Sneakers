@@ -5,7 +5,7 @@ import Top from './Top'
 import Banner from './Banner'
 import $ from 'jquery'
 import Bot from './Bottom'
-
+import axios from 'axios'
 class FrontPage extends React.Component{
     constructor(props){
         super(props)
@@ -19,15 +19,15 @@ class FrontPage extends React.Component{
             $('#morebtn').css("display","none");
         })
         
-        fetch("http://127.0.0.1:8085/data")
-        .then((response)=>response.json())
-        .then((data)=>{
-            this.setState({
-                dataset : data
-            })
-        });
-
         
+        axios.get("http://127.0.0.1:8085/findShoes")
+        .then(response=>{
+            console.log(response.data);
+            this.setState({dataset:response.data})
+        })
+        .catch(error=>{
+            console.error(error);
+        })
     }
 
     render(){
@@ -44,8 +44,9 @@ class FrontPage extends React.Component{
 
                          
                         {
-                            this.state.dataset.filter(item => values.includes(item["id"])).map((item1)=>(
-                                <Card brand = "NIKE" img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}  url = {"/shoes/" + item1["id"]} ></Card>
+                            this.state.dataset.map((item1)=>(
+                                // <Card brand = "NIKE" img = {item1["image"]} name = {item1["name"]} price = {item1["price"]} info = {item1} id = {item1["id"]}  url = {"/shoes/" + item1["id"]} ></Card>
+                                <Card brand = "NIKE" item = {item1}></Card>
                             ))
                         }
       

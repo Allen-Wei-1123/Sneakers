@@ -63,7 +63,7 @@ class CartItems extends Component{
             <Fragment>
                     <tr>
                         <td>
-                            <img src = {process.env.PUBLIC_URL + "/images/" +this.props.img}></img>
+                            <img src = {this.props.img}></img>
                         </td>
                         
                         <td id = "cart-item-name">
@@ -73,7 +73,7 @@ class CartItems extends Component{
                             {this.props.size}
                         </td>
                         <td id = "price-td">
-                            {this.state.price  }
+                            ${this.state.price  }
                         </td>
                         <td>
                             
