@@ -109,7 +109,7 @@ class ShoppingCart extends Component{
                                 (this.state.dataset||[]).map((item,index)=>{
                                     // console.log(item["img"]);
                                      return <CartItems key = {item.id} idnum = {item.id} img = { item["img"] } name = {item.name} price = {item.price} 
-                                        size = {item.size} deleteCell = {this.deleteTblCell}  handleNewTotal = {this.handleNewTotal} handleNewTotal2 = {this.handleNewTotal2}
+                                        size = {item.size} amount={item.count} deleteCell = {this.deleteTblCell}  handleNewTotal = {this.handleNewTotal} handleNewTotal2 = {this.handleNewTotal2}
                                     ></CartItems>
                                 })
                             }

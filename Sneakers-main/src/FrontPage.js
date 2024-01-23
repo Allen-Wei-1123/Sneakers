@@ -28,6 +28,19 @@ class FrontPage extends React.Component{
         .catch(error=>{
             console.error(error);
         })
+
+        const socket = new WebSocket('ws://localhost:3001');
+
+        socket.addEventListener('open', () => {
+            console.log('Connected to the WebSocket server');
+        });
+
+        socket.addEventListener('message', (event) => {
+        });
+
+        socket.addEventListener('close', () => {
+            console.log('Connection closed');
+        });
     }
 
     render(){

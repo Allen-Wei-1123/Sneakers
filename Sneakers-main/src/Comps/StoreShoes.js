@@ -95,16 +95,20 @@ const ShoeForm = () => {
             
             await uploadBytes(storageRef,shoePicture).then((snapshot)=>{
                 console.log("snapshot"+snapshot)
-                getDownloadURL(storageRef).then((url)=>{
-                    axios.post("http://127.0.0.1:8085/storeShoes",{shoename:shoeName,
+                getDownloadURL(storageRef).then(async(url)=>{
+                    await axios.post("http://127.0.0.1:8085/storeShoes",{shoename:shoeName,
                                                             shoeDescription:shoeDescription,
                                                             sizes:shoeSizes,
                                                             shoetype:shoesType,
                                                             time:getCurrentDateTime(),
                                                             imgurl:url,
-                                                            poster:ParseData["_id"]})
-                        .then(response=>{
-                            console.log(response);
+                                                            poster:ParseData["_id"]},{headers: {
+                                                                'Content-Type': 'application/json',
+                                                                // Add any other headers if needed
+                                                            }})
+                        .then(function(response){
+                            console.log("response is")
+                            console.log(response.status);
                         }).catch((err)=>{
                             console.log(err);
                         })

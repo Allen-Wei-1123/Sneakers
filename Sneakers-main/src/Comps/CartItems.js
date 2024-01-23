@@ -1,6 +1,7 @@
 import React, {Component,Fragment} from 'react'
 import $ from 'jquery'
 import '../css/ShoppingCart.css'
+import axios from 'axios';
 
 
 class CartItems extends Component{
@@ -15,6 +16,10 @@ class CartItems extends Component{
         return parseInt(word);
     }
     
+    deleteItem =e=>{
+        
+    }
+
     AmountChanged = e =>{
        var oldamnt = this.state.amount ;
         this.setState({
@@ -27,7 +32,13 @@ class CartItems extends Component{
         }else{
             this.props.handleNewTotal2(this.state.singlePrice)
         }
-        
+        const userSessionStorage = sessionStorage.getItem("userdata")
+        const userID = JSON.parse(userSessionStorage)["_id"]
+        console.log("this.amount is ",this.state.amount)
+        axios.post(`http://127.0.0.1:8085/changeAmount/${userID}/${this.props.idnum}/${this.state.amount+1}`,{})
+        .then((res)=>{
+            console.log(res);
+        })
     }
     state = {
         singlePrice:"",
@@ -51,7 +62,8 @@ class CartItems extends Component{
         }
         this.setState({
             singlePrice : parseInt(pricestr),
-            price : this.props.price
+            price : this.props.price,
+            amount:this.props.amount
         })
         this.deleteclicked = this.deleteclicked.bind(this)
     }
