@@ -5,10 +5,15 @@ import axios from 'axios';
 
 
 class CartItems extends Component{
-    deleteclicked = e =>{
+    deleteclicked = async(e) =>{
         this.props.deleteCell(this.props.idnum,this.props.name);
-        var oldprice = this.state.price
-        this.props.handleNewTotal(oldprice);
+        // var oldprice = this.state.price
+        const userSessionStorage = sessionStorage.getItem("userdata")
+        const userID = JSON.parse(userSessionStorage)["_id"]
+        // this.props.handleNewTotal(oldprice);
+        const response =  await axios.delete(`http://127.0.0.1:8085/deleteItem/${userID}/${this.props.shoeid}`).then((response)=>{
+            console.log(response);
+        })
     }
     cvtPricetoInt (pricevalue){
         var n = pricevalue.length;
@@ -20,7 +25,7 @@ class CartItems extends Component{
         
     }
 
-    AmountChanged = e =>{
+    AmountChanged = async(e) =>{
        var oldamnt = this.state.amount ;
         this.setState({
             price : "$" + ( this.state.singlePrice * e.target.value).toString(),
@@ -35,7 +40,7 @@ class CartItems extends Component{
         const userSessionStorage = sessionStorage.getItem("userdata")
         const userID = JSON.parse(userSessionStorage)["_id"]
         console.log("this.amount is ",this.state.amount)
-        axios.post(`http://127.0.0.1:8085/changeAmount/${userID}/${this.props.idnum}/${this.state.amount+1}`,{})
+        await axios.post(`http://127.0.0.1:8085/changeAmount/${userID}/${this.props.key}/${this.state.amount+1}`,{})
         .then((res)=>{
             console.log(res);
         })
@@ -43,7 +48,7 @@ class CartItems extends Component{
     state = {
         singlePrice:"",
         price:"",
-        amount : 1
+        amount : this.props.amount
     }
     constructor(props){
         super(props)
@@ -52,7 +57,9 @@ class CartItems extends Component{
         
     }
 
-    
+    async GetAmount (){
+        
+    }
     componentDidMount(){
         
         var pricestr = ""
@@ -66,6 +73,7 @@ class CartItems extends Component{
             amount:this.props.amount
         })
         this.deleteclicked = this.deleteclicked.bind(this)
+        
     }
 
     render(){
@@ -92,7 +100,7 @@ class CartItems extends Component{
                             <div class = "adjust-amount" >
                               
 
-                                <input defaultValue="1" type="number" id="quantity"  name="quantity" min="1" max="5" onChange = {this.AmountChanged}/>
+                                <input defaultValue="1" type="number" id="quantity"  name="quantity" min="1" value={this.state.amount} onChange = {this.AmountChanged}/>
                                 
                             </div>
 

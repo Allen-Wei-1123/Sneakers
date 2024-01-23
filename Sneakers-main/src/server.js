@@ -284,6 +284,50 @@ app.post("/changeAmount/:userid/:shoeid/:amount",async(req,res)=>{
     }
 })
 
+app.get("/getamount/:userid/:shoeid",async(req,res)=>{
+    try{
+        await client.connect();
+        const db = client.db("store")
+        const collection = db.collection("users")
+        const userid = req.params.userid
+        const shoeid = req.params.shoeid;
+        console.log("shoeid is ",shoeid)
+        let response = await collection.findOne({_id:new ObjectId(userid),
+                                                "cart":{
+                                                    $elemMatch:{"shoeid": shoeid}
+                                                    }
+                                                },
+                                                {"cart.$":1})
+        
+        console.log("response is ",response?response.cart[0]:null);
+    }finally{
+        await client.close();
+    }
+})
+
+app.delete("/deleteItem/:userid/:shoeid",async(req,res)=>{
+    try{
+        await client.connect();
+        const db = client.db("store")
+        const collection = db.collection("users")
+        const userid = req.params.userid
+        const shoeid = req.params.shoeid;
+        let response = await collection.updateOne(
+            { _id: new ObjectId(userid) },
+            { $pull: { cart: { shoeid: shoeid } } },
+            (error, result) => {
+              if (error) {
+                console.error('Error deleting item:', error);
+              } else {
+                console.log('Item deleted successfully:', result);
+              }
+            }
+          );
+        res.json(response);
+    }finally{
+        await client.close();
+    }
+})
 
 
 async function publishNotification (item){
